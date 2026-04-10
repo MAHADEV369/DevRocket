@@ -20,8 +20,8 @@
 
 ```bash
 # 1. Clone this repo (it contains only documentation)
-git clone https://github.com/YOUR_USERNAME/genai-backend-blueprint.git
-cd genai-backend-blueprint
+git clone https://github.com/DevRocket/DevRocket.git
+cd DevRocket
 
 # 2. Follow the skill files in order:
 #    skills/01-scaffold.md → skills/02-database.md → skills/03-auth.md → ...
