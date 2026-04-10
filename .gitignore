@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+*.tsbuildinfo
+
+# Testing
+coverage/
+
+# Prisma
+.prism/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Docker
+docker/
+
+# Secrets
+*.pem
+*.key
+*.jks
+*.keystore
+
+# Backups
+*.sql.gz
+backups/
+
+# Local data
+data/

@@ -1,0 +1,45 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2025-01-15",
+  "skills": {
+    "01-scaffold": { "name": "Project Scaffold", "status": "pending", "dependsOn": [], "estimatedTime": "1-2 hours" },
+    "02-database": { "name": "Database Schema & Migrations", "status": "pending", "dependsOn": ["01-scaffold"], "estimatedTime": "2-3 hours" },
+    "03-auth": { "name": "Authentication Module", "status": "pending", "dependsOn": ["01-scaffold", "02-database"], "estimatedTime": "4-5 hours" },
+    "04-middleware": { "name": "Middleware (Rate Limiting, Validation, Errors)", "status": "pending", "dependsOn": ["01-scaffold", "03-auth"], "estimatedTime": "2-3 hours" },
+    "05-images-crud": { "name": "Image Generation CRUD", "status": "pending", "dependsOn": ["01-scaffold", "03-auth", "04-middleware"], "estimatedTime": "3-4 hours" },
+    "06-gallery": { "name": "Gallery & Sharing Endpoints", "status": "pending", "dependsOn": ["02-database", "03-auth", "04-middleware"], "estimatedTime": "2-3 hours" },
+    "07-storage": { "name": "File Upload & Storage (S3/R2)", "status": "pending", "dependsOn": ["01-scaffold", "02-database"], "estimatedTime": "2-3 hours" },
+    "08-queue-worker": { "name": "Background Jobs & Worker", "status": "pending", "dependsOn": ["01-scaffold", "02-database"], "estimatedTime": "2-3 hours" },
+    "09-websocket": { "name": "WebSocket Real-Time Updates", "status": "pending", "dependsOn": ["01-scaffold", "03-auth"], "estimatedTime": "2-3 hours" },
+    "10-email": { "name": "Email Service (Resend)", "status": "pending", "dependsOn": ["01-scaffold", "03-auth"], "estimatedTime": "1-2 hours" },
+    "11-notifications": { "name": "In-App Notification System", "status": "pending", "dependsOn": ["02-database", "03-auth", "09-websocket"], "estimatedTime": "2-3 hours" },
+    "12-billing-stripe": { "name": "Stripe Billing & Subscriptions", "status": "pending", "dependsOn": ["01-scaffold", "03-auth"], "estimatedTime": "3-4 hours" },
+    "13-oauth-google": { "name": "Google OAuth Sign-In", "status": "pending", "dependsOn": ["03-auth"], "estimatedTime": "2-3 hours" },
+    "14-2fa-totp": { "name": "Two-Factor Authentication (TOTP)", "status": "pending", "dependsOn": ["03-auth"], "estimatedTime": "2-3 hours" },
+    "15-docker": { "name": "Docker & Docker Compose", "status": "pending", "dependsOn": ["01-scaffold"], "estimatedTime": "2-3 hours" },
+    "16-ci-cd": { "name": "CI/CD GitHub Actions", "status": "pending", "dependsOn": ["01-scaffold", "15-docker"], "estimatedTime": "2-3 hours" },
+    "17-nginx-ssl": { "name": "Nginx Reverse Proxy & SSL", "status": "pending", "dependsOn": ["15-docker"], "estimatedTime": "1-2 hours" },
+    "18-api-docs": { "name": "API Documentation (Swagger/OpenAPI)", "status": "pending", "dependsOn": ["01-scaffold", "05-images-crud"], "estimatedTime": "1-2 hours" },
+    "19-load-testing": { "name": "Load Testing (k6)", "status": "pending", "dependsOn": ["03-auth", "05-images-crud"], "estimatedTime": "1-2 hours" },
+    "20-pwa": { "name": "PWA Service Worker", "status": "pending", "dependsOn": ["23-frontend-setup"], "estimatedTime": "1-2 hours" },
+    "21-monitoring": { "name": "Monitoring & Alerting (Sentry + UptimeRobot)", "status": "pending", "dependsOn": ["01-scaffold"], "estimatedTime": "1-2 hours" },
+    "22-deployment": { "name": "Deployment (Railway/Fly.io)", "status": "pending", "dependsOn": ["15-docker", "16-ci-cd"], "estimatedTime": "1-2 hours" },
+    "23-frontend-setup": { "name": "Frontend Setup (React + Vite + TS)", "status": "pending", "dependsOn": ["03-auth"], "estimatedTime": "3-4 hours" },
+    "24-flutter-android": { "name": "Flutter Android App", "status": "pending", "dependsOn": ["03-auth", "05-images-crud"], "estimatedTime": "4-6 hours" },
+    "25-expo-react-native": { "name": "Expo (React Native) Mobile App", "status": "pending", "dependsOn": ["03-auth", "05-images-crud"], "estimatedTime": "4-6 hours" },
+    "26-db-indexing": { "name": "Database Indexing Strategy", "status": "pending", "dependsOn": ["02-database"], "estimatedTime": "1-2 hours" },
+    "27-testing": { "name": "Testing (Unit + Integration + E2E)", "status": "pending", "dependsOn": ["03-auth", "05-images-crud"], "estimatedTime": "3-4 hours" },
+    "28-env-readme": { "name": ".env.example + README", "status": "pending", "dependsOn": ["01-scaffold"], "estimatedTime": "1 hour" }
+  },
+  "compositions": {
+    "M-01-mvp-backend": { "skills": ["01","02","03","04","05","07","15"], "estimatedTime": "2-3 days" },
+    "M-02-full-production": { "skills": ["01-28"], "estimatedTime": "7-10 days" },
+    "M-03-minimal-deployable": { "skills": ["01","02","03","05","07","15"], "estimatedTime": "1 day" }
+  },
+  "branches": {
+    "auth": { "default": "03-auth (Custom JWT)", "alternatives": ["B-auth-clerk (Clerk)", "B-auth-supabase (Supabase Auth)"] },
+    "deploy": { "default": "22-deployment (Railway)", "alternatives": ["B-deploy-flyio (Fly.io)", "B-deploy-aws (AWS)"] }
+  },
+  "currentSkill": null,
+  "completionPercent": 0
+}
